@@ -50,8 +50,8 @@ begin
 
     report_begin;
     for j in 0 to 15 loop
-      a <= random_vector(Wt);
-      b <= random_vector(Wt);
+      a <= '0'&random_vector(Wt-1);
+      b <= '0'&random_vector(Wt-1);
       m <= '0';
       result <= std_logic_vector(unsigned(a) + unsigned(b));
       report  LF & "Valor esperado de a+b = " & report_signal(a,"dec") & "+" & report_signal(b,"dec") & " = " & report_signal(result,"dec");
@@ -62,36 +62,6 @@ begin
     end loop;
     report_pass_fail(errors);
 
-    -- EDIT Adapt initialization as needed
---    a <= (others => '0');
---    b <= (others => '0');
---    m <= '0';
---    wait for 10 ns;
---    a <= std_logic_vector(to_unsigned(2, wt));
---    b <= std_logic_vector(to_unsigned(2, wt));
---    wait for 10 ns;
---    a <= std_logic_vector(to_unsigned(253, wt));
---    b <= std_logic_vector(to_unsigned(4, wt));
---    wait for 10 ns;
---    a <= std_logic_vector(to_unsigned(14, wt));
---    b <= std_logic_vector(to_unsigned(76, wt));
---    wait for 10 ns;
---    a <= std_logic_vector(to_unsigned(9, wt));
---    b <= std_logic_vector(to_unsigned(255, wt));
---    wait for 10 ns;
---    m <= '1';
---    a <= std_logic_vector(to_unsigned(250, wt));
---    b <= std_logic_vector(to_unsigned(250, wt));
---    wait for 10 ns;
---    a <= std_logic_vector(to_unsigned(3, wt));
---    b <= std_logic_vector(to_unsigned(13, wt));
---    wait for 10 ns;
---    a <= std_logic_vector(to_unsigned(12, wt));
---    b <= std_logic_vector(to_unsigned(1, wt));
---    wait for 10 ns;
---    a <= std_logic_vector(to_unsigned(1, wt));
---    b <= std_logic_vector(to_unsigned(3, wt));
---    wait for 10 ns; */
     report_end;
     wait;
 
