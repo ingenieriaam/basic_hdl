@@ -1,0 +1,7 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1661216874" />
+    <testcase name="co_test" classname="tb_full_Adder" file="/home/aortiz/basic_hdl/fullAdder/tb_full_Adder.py" lineno="11" time="0.0006122589111328125" sim_time_ns="0.041" ratio_time="66.9651339563863" />
+    <testcase name="entire_test" classname="tb_full_Adder" file="/home/aortiz/basic_hdl/fullAdder/tb_full_Adder.py" lineno="32" time="0.0015807151794433594" sim_time_ns="0.441" ratio_time="278.9876416289593" />
+  </testsuite>
+</testsuites>

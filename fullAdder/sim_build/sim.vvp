@@ -1,0 +1,47 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+:vpi_module "v2009";
+S_0x55bb77127320 .scope module, "full_adder" "full_adder" 2 1;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a"
+    .port_info 1 /INPUT 1 "b"
+    .port_info 2 /INPUT 1 "ci"
+    .port_info 3 /OUTPUT 1 "sum"
+    .port_info 4 /OUTPUT 1 "co"
+L_0x7f6c898b7060 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x55bb77127520_0 .net *"_s10", 0 0, L_0x7f6c898b7060;  1 drivers
+v0x55bb7715b780_0 .net *"_s11", 1 0, L_0x55bb7715c760;  1 drivers
+v0x55bb7715b860_0 .net *"_s13", 1 0, L_0x55bb7715c8a0;  1 drivers
+L_0x7f6c898b70a8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x55bb7715b950_0 .net *"_s16", 0 0, L_0x7f6c898b70a8;  1 drivers
+v0x55bb7715ba30_0 .net *"_s17", 1 0, L_0x55bb7715ca00;  1 drivers
+v0x55bb7715bb60_0 .net *"_s3", 1 0, L_0x55bb7715c490;  1 drivers
+L_0x7f6c898b7018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x55bb7715bc40_0 .net *"_s6", 0 0, L_0x7f6c898b7018;  1 drivers
+v0x55bb7715bd20_0 .net *"_s7", 1 0, L_0x55bb7715c5e0;  1 drivers
+o0x7f6c89900198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55bb7715be00_0 .net "a", 0 0, o0x7f6c89900198;  0 drivers
+o0x7f6c899001c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55bb7715bf50_0 .net "b", 0 0, o0x7f6c899001c8;  0 drivers
+o0x7f6c899001f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55bb7715c010_0 .net "ci", 0 0, o0x7f6c899001f8;  0 drivers
+v0x55bb7715c0d0_0 .net "co", 0 0, L_0x55bb7715c2f0;  1 drivers
+v0x55bb7715c190_0 .net "sum", 0 0, L_0x55bb7715c3c0;  1 drivers
+L_0x55bb7715c2f0 .part L_0x55bb7715ca00, 1, 1;
+L_0x55bb7715c3c0 .part L_0x55bb7715ca00, 0, 1;
+L_0x55bb7715c490 .concat [ 1 1 0 0], o0x7f6c89900198, L_0x7f6c898b7018;
+L_0x55bb7715c5e0 .concat [ 1 1 0 0], o0x7f6c899001c8, L_0x7f6c898b7060;
+L_0x55bb7715c760 .arith/sum 2, L_0x55bb7715c490, L_0x55bb7715c5e0;
+L_0x55bb7715c8a0 .concat [ 1 1 0 0], o0x7f6c899001f8, L_0x7f6c898b70a8;
+L_0x55bb7715ca00 .arith/sum 2, L_0x55bb7715c760, L_0x55bb7715c8a0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/home/aortiz/basic_hdl/fullAdder/full_Adder.v";
